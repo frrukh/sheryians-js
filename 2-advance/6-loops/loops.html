@@ -1,0 +1,44 @@
+<script>
+// FOREACH
+    // only works for arrays.
+    // gives every value of array one by one.
+    // do't make any changes to the original array.
+var a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+a.forEach(function(val){
+    val++; // this do't make any changes to original as value is just a temporary copy.
+    console.log(val)
+})
+console.log(a); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+    // we can also get index from forEach.
+var b = [4,2,3,35,24,24,24,24]
+b.forEach(function(val, ind){
+    console.log(ind+ ' :  ' + val);
+})
+
+
+// FORIN
+    // generally used for objects
+    // gives keys.
+var obj = {
+    name : 'farrukh',
+    age : 19,
+    class : 'python programming course'
+}
+
+for(var key in obj){
+    console.log(key, obj[key]) // to ues variable as a key we use [] like obj[key].
+    console.log(key, obj.key) // this shows undefined for obj.key as obj has no property 'key',
+}
+
+    // using on array. it gives index.
+var c = [1,2,3,4,5,6,7]
+for(var index in c){
+    console.log(index+' :  '+ c[index])
+}
+
+
+
+</script>
