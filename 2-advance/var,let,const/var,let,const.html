@@ -1,0 +1,64 @@
+<script>
+// DIFFERENCE BETWEEN var let AND const.
+
+// var and let are used to declare variables.
+// const is used to declare constant.(A variable that cannot be reassigned.)
+
+// DIFFERENCE NO 1-(es5:var, es6:let, const)
+    // there are 2 versions of js. ES5 and ES6.
+    // var is from ES5.
+    // let and const are from ES5.
+
+
+// DIFFERENCE NO 2-(var is function scoped, let and const are braces scoped.)
+    // SCOPE:
+        // var is function scoped. i.e it can be used anywhere in its parent function.
+        // var declarations are hoisted to the top of their scope.
+function abc(){
+    for(var i=0; i<12; i++){
+        console.log(i)
+    }
+    console.log(i) // 12 , not error, declared with var which is function scoped.
+}
+
+abc()
+
+        // let is braces scoped. i.e it can be used just inside its braces.
+
+function abcd(){
+    for(let i=0; i<12; i++){
+        console.log(i)
+    }
+    // console.log(i) // ReferenceError: i is not defined , declared with let not with var.
+}
+
+// abcd();
+
+    // const is same like let.
+function abcde(){
+    for(let i=0; i<12; i++){
+        console.log(i)
+    }
+    // console.log(i) // Uncaught ReferenceError: i is not defined at abcde , declared with const not with var.
+}
+
+abcde();
+
+// DIFFERENCE NO 3 -(var add itself to the window object , var and const do't add)
+
+// ********************
+// Q: What is window object?
+// A: somethings that are not the part of js (they are the part of browser) but we can use them in js are stored in a object called window object.
+// Q: can we see the window object?
+// A: yes, just go to the console window and type 'window' and hit enter.
+// ********************
+
+    // var adds itself to the window object.(that causes to leak you variables data.)
+var a = 12; 
+
+    // let and const do't add themselves to the window object.
+let b = 13;
+const aa = 14;
+
+
+</script>
