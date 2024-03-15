@@ -1,0 +1,50 @@
+<script>
+// EXECUTION CONTEXT.
+// execution context is a container in which the function's code is executed.it's always created when the function is called.it contains three things,variables,functions, lexical environment environment of that function.
+
+// it is an environment that created when a function runs.
+// it contains three things:
+    // 1- variables that are declared in that function.
+    // 2- functions that are declared in that function.
+    // 3- lexical environment
+
+function abc(){
+    var a = 12;
+    let b = 21;
+    const c = 33;
+    function xyz(){
+        var newone = 222;
+    }
+    function add() {}
+}
+
+    // execution context of function abc() is:
+    /*
+        --------------------------------------------------------------    
+        | variables:     | functions:       | lexical environment:   |
+        |           a=12 |        xyz()     | it tells that which    |
+        |           b=21 |        add()     | things the function    |
+        |           c=33 |                  | can access,and which   |
+        |                |                  | things the function    |
+        |                |                  | can't access.          |
+        |                |                  |                        |
+        |                |                  |                        |
+        --------------------------------------------------------------    
+    */
+
+
+// LEXICAL ENVIRONMENT.
+// it is a chart that holds the values that the function can access and the values that the function can't access. i.e. it holds its scope and scope chain.
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,53 @@
+<script>
+// ********************
+// Q: How to copy reference values?
+    // A: there are several ways to copy reference values.
+        // 1- spread operator.
+var a = [1, 2, 3, 4, 5]
+var b = [...a] // it will makes a copy of [1, 2, 3, 4, 5] and assign the reference of that copy to b.
+b.pop()
+console.log(b) // [1, 2, 3, 4]
+console.log(a) // [1, 2, 3, 4, 5]
+
+
+var c = {name : 'farrukh'}
+var d = {...c}
+d.name = 'talha'
+console.log(d) // {name : 'talha'}
+console.log(c) // {name : 'farrukh'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ********************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
