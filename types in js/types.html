@@ -1,0 +1,58 @@
+<script>
+// TYPES IN JAVASCRIPT
+
+// there are mainly two types of data in javascript.
+    // 1- primitive ( قدیم )
+        // primitives are IMMUTABLE data-types in javascript.
+            // there are 6 primitives.
+                // 1) string
+                // 2) number : integer , float
+                // 3) boolean
+                // 4) Undefined: Represents an uninitialized variable.
+                // 5) Null: Represents the intentional absence of any object value.
+                // 6) Symbol: Represents unique values, introduced in ECMAScript 6.
+
+
+    // 2- reference
+        // reference means the variable do't have the value stored in it, actually it holds the reference to their values in memory.
+        // references are MUTABLE data-types in javascript.
+            // all the objects like array[], object{}, functions() are of reference type.
+            // i.e the data created by () or [] or {} are of reference type.
+
+
+// TWIST:
+// we can make a copy of a primitives like this:
+var a = 'the string';
+var b = a;
+
+var a = 12;
+var b = a;
+    // because the primitive data types stores the actual value in it.
+    // and because the primitives are immutable so the original one will never be effected.
+
+
+// but we can't make a copy of the reference data-type like this:
+var arr = [1, 2, 3, 4, 5]
+var arr2 = arr
+    // because the reference data-type stores the reference of the values in the memory.
+    // so if we copy it like this then it means both of these variables are pointing toward the same location in memory. and the change in one of them absolutely make the changes in other.
+var arr = [1, 2, 3, 4, 5] // only store the reference of [1, 2, 3, 4, 5] in memory.
+var arr2 = arr // now arr2 also stores the reference of the [1, 2, 3, 4, 5] in the memory. and  both are same.
+
+    // if we make changes to arr2 . it will make changes to the location of [1, 2, 3, 4, 5] in memory that will absolutely effect arr because arr is also saved same reference in it.
+
+arr2.pop()
+console.log(arr2) // [1, 2, 3, 4]
+console.log(arr)  // [1, 2, 3, 4]
+
+
+
+
+
+
+
+
+
+
+
+</script>
