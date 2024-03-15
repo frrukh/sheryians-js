@@ -29,8 +29,17 @@ function sum(a, b) {
 console.log(b) // undefined (due to hoisting)
 var b = 3;
     // A: not-defined means the declaration is not done.
-console.log(c) // ReferenceError: c is not defined
+// console.log(c) // ReferenceError: c is not defined
 // ********************
 
 
+// TWIST:
+// in case of let and const the hoisting works differently.
+    // in let and const the hoisting works like : it moves the variable to the top of the file but not declare the variable and also not initialize it.
+        // so, take care of this.
+    
+// console.log(d) // ReferenceError: Cannot access 'd' before initialization
+let d = 4;
 
+// console.log(e) // ReferenceError: Cannot access 'e' before initialization
+let e = 3;
