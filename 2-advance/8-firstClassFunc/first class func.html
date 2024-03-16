@@ -1,0 +1,19 @@
+<script>
+// FIRST CLASS FUNCTIONS
+// first class functions is a concept that we can treat the functions like variables.
+    // as a variable.
+var a = function(){
+    console.log('this is a first class function!')
+}
+a()
+
+
+
+    // as a variable , as an argument.
+function abc(x){
+    x()
+}
+abc(function(){console.log('this is also a first class function!!');})
+
+
+</script>

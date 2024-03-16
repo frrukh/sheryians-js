@@ -1,0 +1,33 @@
+<script>
+// *********************
+// Q:How Arrays are made behind the scene?
+    // A: Arrays are made like [0:123, 1:121, 2:132, 3:1323] behind the scene.
+        // due to this we can create negative index in an array.
+var arr = [221, 342, 3, 324, 535];
+arr[-1] = 13;
+arr[-5] = 132;
+console.log(arr); // (5) [221, 342, 3, 324, 535, -1: 13, -5: 132]
+        // but the length keyword do't count the length of the elements of negative index.
+console.log(arr.length); // 5
+// *********************
+
+
+
+// *********************
+// Q: How to delete any property or method of an object?
+    // A: delete keyword is used to delete any property or method.
+
+var obj = {
+    name : 'Farrukh',
+    age : '19',
+    isFit : function(){console.log('yes I am fit!');},
+    isSharp : function(){console.log('yes I am sharp');}
+}
+
+delete obj.name;
+delete obj.isFit;
+
+// *********************
+
+
+</script>
