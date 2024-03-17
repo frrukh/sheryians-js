@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button style="font-size: 1.5rem;">Hi this is a button for event listener.</button>
+
+
+
+<script>
+// this.
+    // it is a keyword that changes its meaning in different context(Situations).
+        // there are five different major context.
+
+            // 1. global => window object 
+                // - (an-object given by the browser to perform some actions like alert.)-(it comes from browser context api).
+var a= this; // window object.
+
+
+
+
+
+            // 2. function => window object.
+function abc(){
+    console.log(this);
+}
+abc();  // window object.
+
+
+
+
+
+            // 3. constructor function => the new object that is creating
+function Abc(){
+this.name = 'don';
+console.log(this)
+this.age = 12;
+}
+
+var gon = new Abc();
+
+
+
+
+            // 4. method => parent object.
+var xyz = {
+    name : 'Ali',
+    ab : function(){
+        console.log(this);
+    }
+}
+
+xyz.ab()  // {name: 'Ali', ab: function(){console.log(this);}}
+
+
+
+
+
+            // 5. event listener => element on which the event listener is called.
+            var btn = document.querySelector('button');
+btn.addEventListener('click', function(){
+    console.log(this); // <button style="font-size: 1.5rem;">button for event listener.</button>
+})
+
+
+
+
+
+
+// HERE IS AN IMPORTANT THING TO KEEP IN MIND:
+    // as by default the value of "this" in function is window object. but in functions we can change the value of "this" to an OBJECT or LIST.
+    // there are three ways to do this thing.
+
+        // 1- call() - it will call your function and also take the first argument as the value of "this" and then your custom arguments one by one.
+
+function xy(){
+    console.log(this)
+}
+xy.call() // run with no error with "this" = window boject. 
+
+var ths = { name : 'kamaal' };
+xy.call(ths) // "this" = {name: 'kamaal'}
+
+
+
+function abcdef(a, b, c){
+    console.log(this, a, b, c);
+}
+
+var ths = { age : 12, name : 'mosh' };
+abcdef.call(ths, 12, true, 'string') // {age: 12, name: 'mosh'} 12 true 'string'
+
+
+        // 2- apply is exactly same as call() but it takes arguments as string.
+    
+function xy(a, b, c){
+    console.log(this, a, b, c);
+}
+var ths = { age : 12, name : 'mosh' };
+xy.apply(ths, [12, true, 'string']) 
+
+
+
+console.log('--------------------------------------------------------')
+
+        // 3- bind - unlike above the bind function do't call the function. it just bind an object to "this" keyword in that function.and return a new function. i.e. there is no need to tell the value of "this" every time. you just bind it once and then call the returned function.
+
+function binded(a,b){
+    console.log(this);
+    console.log(a);
+    console.log(b);
+}
+
+var obj = { age : 32 }
+var binded_fun = binded.bind(obj); // now the "this" of function is obj.
+
+binded_fun(1,4) // {age: 32} 1 4
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

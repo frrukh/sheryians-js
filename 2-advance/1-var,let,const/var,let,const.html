@@ -44,6 +44,24 @@ function abcde(){
 
 abcde();
 
+// ********************
+// Q: Can we declare a variable of global scope independent of its position i.e. no matters it is in function or block it should be global?
+    // A: Yes! we can do this by just declaring a variable without any keyword like var or let or const.
+function global_var(){
+    if(true){
+        global = "This is a global variable."
+    }
+}
+
+global_var() // now we can access "global" anywhere.
+console.log(global) // "This is a global variable."  remember hoisting do't declare the global variables.
+
+
+
+
+// ********************
+
+
 // DIFFERENCE NO 3 -(var add itself to the window object , var and const do't add)
 
 // ********************

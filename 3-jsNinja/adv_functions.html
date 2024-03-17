@@ -1,0 +1,99 @@
+<script>
+// HIGHER ORDER FUNCTIONS.
+    // a function that accept a function as a parameter or return a function is called HIGHER ORDER FUNCTION.
+
+        // abc is a higher order function.
+function abc(a){
+    console.log(a);
+}
+
+abc(function(){console.log(a);})
+
+        // def is also a higher order function.
+function def(){
+    return function(){}
+}
+
+def()
+
+        // EXAMPLE: forEach method is a higher order function. as it takes function as a parameter.
+let arr = [1,2,3,4,5,6]
+arr.forEach(function(val){
+    ++val
+})
+
+
+
+// CONSTRUCTOR FUNCTIONS.
+    // a function that is used to create and initialize the object is called CONSTRUCTOR FUNCTION. We capitalize the first letter of its name to distinguish between the constructor and normal function.
+    // we use this to give the properties to the object.
+    
+function BucketMould(color){
+    this.width = 12;
+    this.height = 20;
+    this.thickness = 2.3;
+    this.color = color;
+    this.taste = "sugary";
+}
+
+    // we use new keyword to call this in order to create a new object.
+    // whenever we call it, It will return a new object.
+var bis1 = new BucketMould('brown')
+var bis2 = new BucketMould('black')
+
+
+// FIRST CLASS FUNCTIONS.
+    // A language is said to have first class functions if the functions in that language can be treated as normal values or variable. i.e. you can save them and also pass them as argument to another function.
+
+        // EXAMPLE:
+        // we can pass a function as argument to setInterval because in js the functions are first class functions.
+
+setInterval(function(){
+    console.log('hi')
+}, 5000);
+
+
+// iifi ( immediately invoked function expression ).
+    // iffi is usually used to immediately run the function and to prevent the function from the pollution of the global scope variables.
+        // 
+    // simple iffi
+    (function(){
+        console.log('hi this is simple iffi!')
+    })();  // the semi-colon is necessary to run two iffis one after other. 
+
+
+    ( () => {
+        console.log('hi this is also a simple iffi with arrow function!')
+    } )();
+    
+    // named iffi
+(function abc(){
+    console.log('hi this is named iffi!')
+    local = 'abc';  // declaring a global variable but it will treated as a local one as it is in iifi.
+    console.log(local);
+})();
+console.log(local); // this shows error.
+
+    // we also use iifi to create our private variables so any body can't access these and we can give our own defined method to get or change the value of those variables.
+
+var ans = ( () => {
+    var a = 12;
+    return {
+        getter : function(){
+            console.log(a);
+        },
+        setter : function(val){
+            a = val;
+        }
+    }
+})();
+
+
+
+
+
+
+
+
+
+</script>
