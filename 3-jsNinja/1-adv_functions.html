@@ -89,10 +89,32 @@ var ans = ( () => {
 })();
 
 
+// PURE ANS IMPURE FUNCTIONS.
+    // PURE FUNCTION.
+        // it will always return same output for same input.
+        // AND
+        // it will never change the value of a global variable.
+function sum(a,b){
+    return a + b;
+}
+var answer = sum(12, 4) // always gives 16 with 12 and 4.
+console.log(answer);
+
+    
+    // IMPURE FUNCTION.
+        // it will not always return same output for same input.
+        // OR
+        // it will change the value of a global variable.
 
 
+var global_var = 2024;
+function impure(){
+    global_var = undefined;
+}
 
-
+console.log(global_var) // 2024
+impure()
+console.log(global_var) // undefined
 
 
 
