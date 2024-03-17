@@ -1,2 +1,7 @@
-Browser Context Apis
-Prototypes.
+=> Browser Context Apis
+=> Prototypes.
+
+
+- make strong:
+    => Execution Context and Lexical Environment.
+    => use case of iifi

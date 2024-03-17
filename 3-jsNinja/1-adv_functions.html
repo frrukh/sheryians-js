@@ -19,14 +19,14 @@ def()
         // EXAMPLE: forEach method is a higher order function. as it takes function as a parameter.
 let arr = [1,2,3,4,5,6]
 arr.forEach(function(val){
-    ++val
+    ++val;
 })
 
 
 
 // CONSTRUCTOR FUNCTIONS.
     // a function that is used to create and initialize the object is called CONSTRUCTOR FUNCTION. We capitalize the first letter of its name to distinguish between the constructor and normal function.
-    // we use this to give the properties to the object.
+    // we use this to give the properties and methods to the object.
     
 function BucketMould(color){
     this.width = 12;
@@ -34,9 +34,10 @@ function BucketMould(color){
     this.thickness = 2.3;
     this.color = color;
     this.taste = "sugary";
+    this.display = function(){console.log('this is a function')}
 }
 
-    // we use new keyword to call this in order to create a new object.
+    // we use "new" keyword to call this in order to create a new object.
     // whenever we call it, It will return a new object.
 var bis1 = new BucketMould('brown')
 var bis2 = new BucketMould('black')
@@ -106,6 +107,14 @@ console.log(answer);
         // OR
         // it will change the value of a global variable.
 
+function mul(a){
+    return Math.random()*a
+}
+
+console.log(mul(12))
+console.log(mul(12))
+console.log(mul(12))
+
 
 var global_var = 2024;
 function impure(){
@@ -115,7 +124,6 @@ function impure(){
 console.log(global_var) // 2024
 impure()
 console.log(global_var) // undefined
-
 
 
 </script>
